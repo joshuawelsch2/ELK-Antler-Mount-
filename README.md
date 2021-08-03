@@ -89,9 +89,11 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - Filebeat gathers log files which monitor login attempts, sudo usage, and New User and Group creation, and forward those files to Elasticsearch.
+
 [Filebeat Output](Screenshots/syslogdashboardfilebeat.jpg)
 
 - Metricbeat records CPU and Memory Useage, as well as Network Input/Output and forwards the results to Elasticsearch. This allows us to monitor system resources and see if they are being used benefically.
+
 [Metricbeat Output](Screenshots/metricbeatdockerdashboard.jpg)
 
 ### Using the Playbook
@@ -111,18 +113,19 @@ Commands to get and run the ELK playbook:
    - (Screenshots/elk attribution in the hosts file.jpg)
  - Command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-elk.yml'
  - Validate that the installation has been completed without error by visiting http://[your_elk_server_ip]:5601/app/kibana
-  - The desired output: (Screenshots/kibana front page.jpg)
+  - The desired output: 
+  - [Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
 
 Commands to install Filebeat:
  - curl https://github.com/joshuawelsch2/ELK-Antler-Mount/main/Ansible/install-filebeat.yml > /etc/ansible/roles/install-filebeat.yml
  - command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-filebeat.yml'
  - Validate the the setup ran without errors by going into your kibana app and clocking: add log data -> system logs -> system log dashboard.
  - The desired output:
-  - (Screenshots/syslogdashboardfilebeat.jpg)
+  - [Filebeat Dashboard](Screenshots/syslogdashboardfilebeat.jpg)
 
 Commands to install Metricbeat:
  -  curl https://github.com/joshuawelsch2/ELK-Antler-Mount/main/Ansible/install-metricbeat.yml > /etc/ansible/roles/install-metricbeat.yml
  - command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-metricbeat.yml'
  - Validate the the setup ran without errors by going into your kibana app and clocking: add metric data -> Docker metrics -> Docker metrics dashboard.
  - The desired output:
-  - (Screenshots/metricbeatdockerdashboard.jpg)
+  - [Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
