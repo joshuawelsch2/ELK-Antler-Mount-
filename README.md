@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-[Network Diagram](Diagrams/myazurenetwork2.jpg)
+![Network Diagram](Diagrams/myazurenetwork2.jpg)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Ansible file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -77,7 +77,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-[docker ps output](Screenshots/psdockeroutput.jpg)
+![docker ps output](Screenshots/psdockeroutput.jpg)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -91,11 +91,11 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - Filebeat gathers log files which monitor login attempts, sudo usage, and New User and Group creation, and forward those files to Elasticsearch.
 
-[Filebeat Output](Screenshots/syslogdashboardfilebeat.jpg)
+![Filebeat Output](Screenshots/syslogdashboardfilebeat.jpg)
 
 - Metricbeat records CPU and Memory Useage, as well as Network Input/Output and forwards the results to Elasticsearch. This allows us to monitor system resources and see if they are being used benefically.
 
-[Metricbeat Output](Screenshots/metricbeatdockerdashboard.jpg)
+![Metricbeat Output](Screenshots/metricbeatdockerdashboard.jpg)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -115,18 +115,18 @@ Commands to get and run the ELK playbook:
  - Command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-elk.yml'
  - Validate that the installation has been completed without error by visiting http://[your_elk_server_ip]:5601/app/kibana
   - The desired output:
-  - [Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
+  - ![Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
 
 Commands to install Filebeat:
  - curl https://github.com/joshuawelsch2/ELK-Antler-Mount/main/Ansible/install-filebeat.yml > /etc/ansible/roles/install-filebeat.yml
  - command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-filebeat.yml'
  - Validate the the setup ran without errors by going into your kibana app and clocking: add log data -> system logs -> system log dashboard.
  - The desired output:
-  - [Filebeat Dashboard](Screenshots/syslogdashboardfilebeat.jpg)
+  - ![Filebeat Dashboard](Screenshots/syslogdashboardfilebeat.jpg)
 
 Commands to install Metricbeat:
  -  curl https://github.com/joshuawelsch2/ELK-Antler-Mount/main/Ansible/install-metricbeat.yml > /etc/ansible/roles/install-metricbeat.yml
  - command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-metricbeat.yml'
  - Validate the the setup ran without errors by going into your kibana app and clocking: add metric data -> Docker metrics -> Docker metrics dashboard.
  - The desired output:
-  - [Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
+  - ![Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
