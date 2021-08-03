@@ -114,12 +114,8 @@ Commands to get and run the ELK playbook:
    - (Screenshots/elk attribution in the hosts file.jpg)
  - Command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-elk.yml'
  - Validate that the installation has been completed without error by visiting http://[your_elk_server_ip]:5601/app/kibana
-  - The desired output: 
-<<<<<<< Updated upstream
+  - The desired output:
   - [Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
-=======
-   - [Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
->>>>>>> Stashed changes
 
 Commands to install Filebeat:
  - curl https://github.com/joshuawelsch2/ELK-Antler-Mount/main/Ansible/install-filebeat.yml > /etc/ansible/roles/install-filebeat.yml
@@ -133,8 +129,4 @@ Commands to install Metricbeat:
  - command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-metricbeat.yml'
  - Validate the the setup ran without errors by going into your kibana app and clocking: add metric data -> Docker metrics -> Docker metrics dashboard.
  - The desired output:
-<<<<<<< Updated upstream
   - [Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
-=======
-  - [Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
->>>>>>> Stashed changes
