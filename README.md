@@ -55,12 +55,13 @@ Machines within the network can only be accessed by the Jumpbox Machine.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Function   | IP Address | OS    |
-|----------|------------|------------|-------|
-| Jump Box | Gateway    | 10.0.0.4   | Linux |
-| Web-1    | Web Server | 10.0.0.6   | Linux |
-| Web-2    | Web Server | 10.0.0.7   | Linux |
-| AllenBox | ELK Stack  | 10.1.0.5   | Linux |
+| Name     | Publicly Accessible     | Allowed IP Addresses   |
+|----------|-------------------------|------------------------|
+| Jump Box | 22 - SSH - Yes          | 135.84.199.29          |
+| Web-1,2  | No                      | Web LB - 168.62.206.25 |
+| Web LB   | HTTP - 80 - Yes         | *                      |
+| AllenBox | Kibana - 5601 - Yes     | *                      |
+| AllenBox | HTTP - API - 9200 - Yes | 10.0.0.0/16            |
 
 ### Elk Configuration
 
@@ -114,7 +115,11 @@ Commands to get and run the ELK playbook:
  - Command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-elk.yml'
  - Validate that the installation has been completed without error by visiting http://[your_elk_server_ip]:5601/app/kibana
   - The desired output: 
+<<<<<<< Updated upstream
   - [Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
+=======
+   - [Kibana Dashboard](Screenshots/kibanafrontpage.jpg)
+>>>>>>> Stashed changes
 
 Commands to install Filebeat:
  - curl https://github.com/joshuawelsch2/ELK-Antler-Mount/main/Ansible/install-filebeat.yml > /etc/ansible/roles/install-filebeat.yml
@@ -128,4 +133,8 @@ Commands to install Metricbeat:
  - command to run the playbook: 'ansible-playbook /etc/ansible/roles/install-metricbeat.yml'
  - Validate the the setup ran without errors by going into your kibana app and clocking: add metric data -> Docker metrics -> Docker metrics dashboard.
  - The desired output:
+<<<<<<< Updated upstream
   - [Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
+=======
+  - [Metricbeat Dashboard](Screenshots/metricbeatdockerdashboard.jpg)
+>>>>>>> Stashed changes
